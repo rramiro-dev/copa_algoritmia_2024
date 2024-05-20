@@ -1,0 +1,37 @@
+
+
+Tema: juegos olimpicos 'Paris 2024'
+
+Equipo: 'CodeV'
+
+- Van a ser 4 desafios
+- el primer desafio se entrega el domingo
+- Si subo la entrega lo mas pronto posible, tengo mas puntaje
+- El desafio final se desarrolla en los laboratorios de la UADE
+- PwC estara presente en la final, al igual que AXXON, para ver a los que son capos y quizas presentarles una propuesta
+- El lanzamiento del 2do desafio se realizara el lunes siguiente
+- El ultimo desafio se hace presencial en el laboratorio (creen que de 9am a 1pm)
+- Se abarcaran los temas de fundamentos y programacion 1
+
+Repaso de presentacion de la kick-off
+- tematica: paris 2024 (JJOO 2024)
+- 46 equipos en carrera. Compiten por el 1er, 2do, y 3er puesto
+- desafios semanales: 3 desafios virtuales de resolucion semanal
+    - hay q subir los resultados a la plataforma Teams
+    - Fecha de cierre de cada desafio semanal: domingo hasta las 23:59
+    - La publicacion de la tabla de posiciones parciales sera el miercoles de cada semana (sin puntaje, solo en orden)
+    - 
+- la final: desafio presencial en los laboratorios (1ero de junio, al rededor de 9:00 y 9:30)
+    - ese dia no se evalua el desafio, solo lo hacemos y lo subimos a la plataforma
+    - ese mismo dia se hace entrega de los premios (1er, 2do, y 3er puesto)
+    - el que gana el torneo, gana la aprobacion de la materia (de final)
+        - tener aprobado el primer parcial
+        - hay q seguir viniendo hasta que finaliza la materia (?
+    - la defensa de la entrega final es individual
+    - se puede usar internet en la final (por ejemplo: para leer documentacion)
+
+- puntuacion:
+    - resolucion del desafio: codigo ejecutable que cumpla con la consigna especificada
+    - optimizacion
+    - tiempo de entrega: desde que se lanza el desafio, en cuanto tiempo se sube a la plataforma. Cuanto antes, mejor
+    - documentacion del codigo: con comentarios dentro de la codificacion, o docStrings, entre otras buenas practicas para documentar el codigo
