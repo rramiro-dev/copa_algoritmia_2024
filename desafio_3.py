@@ -97,11 +97,18 @@ def se_puede_finalizar_adelantado(_lista_jugador_1: list, _lista_jugador_2: list
     '''
     cant_goles_jugador_1: int = _lista_jugador_1.count('Y')
     cant_goles_jugador_2: int = _lista_jugador_2.count('Y')
-    tiros_pendientes: int = _lista_jugador_1.count('') # Tambien se puede usar _lista_jugador_2, ya que tienen el mismo len().
-    goles_jugador_menos_goles: int = cant_goles_jugador_1 if cant_goles_jugador_1 < cant_goles_jugador_2 else cant_goles_jugador_2
-    goles_jugador_mas_goles: int = cant_goles_jugador_1 if cant_goles_jugador_1 > cant_goles_jugador_2 else cant_goles_jugador_2
+    goles_jugador_menos_goles: int = min(cant_goles_jugador_1, cant_goles_jugador_2)
+    goles_jugador_mas_goles: int = max(cant_goles_jugador_1, cant_goles_jugador_2)
     
-    if (tiros_pendientes + goles_jugador_menos_goles) < goles_jugador_mas_goles:
+    tiros_pendientes_jugador1: int = _lista_jugador_1.count('')
+    tiros_pendientes_jugador2: int = _lista_jugador_2.count('')
+    diferencia_goles: int = goles_jugador_mas_goles - goles_jugador_menos_goles
+    if not es_par(tiros_pendientes_jugador1 + tiros_pendientes_jugador2):
+        total_tiros_pendientes = (tiros_pendientes_jugador1 + tiros_pendientes_jugador2 + 1) // 2
+    else:
+        total_tiros_pendientes = (tiros_pendientes_jugador1 + tiros_pendientes_jugador2) // 2
+
+    if diferencia_goles > total_tiros_pendientes:
         return True
     else:
         return _finalizar_juego
@@ -132,15 +139,16 @@ for indice in range(len(argentina) + len(paises_bajos)): # 0 - 9
     if es_par(indice):
         # En indices pares patea Argentina
         argentina[ronda - 1] = 'Y' if es_gol(jugadora_argentina, jugadora_paisesbajos) else 'N'
-        resultado = 'Gol' if argentina[ronda - 1] == 'Y' else 'Errado'
+        resultado: str = 'Gol' if argentina[ronda - 1] == 'Y' else 'Errado'
     else:
         # En indices impares patea Paises Bajos
         paises_bajos[ronda - 1] = 'Y' if es_gol(jugadora_paisesbajos, jugadora_argentina) else 'N'
-        resultado = 'Gol' if paises_bajos[ronda - 1] == 'Y' else 'Errado'
+        resultado: str = 'Gol' if paises_bajos[ronda - 1] == 'Y' else 'Errado'
     
     # Imprimimos el estado actual del marcador
     imprimir_marcador(ronda, argentina, paises_bajos, jugadora_argentina, jugadora_paisesbajos, resultado)
 
     # Evaluamos si es necesario seguir jugando rondas, o podemos finalizar de forma anticipada
-    if se_puede_finalizar_adelantado():
+    if se_puede_finalizar_adelantado(argentina, paises_bajos) and indice != (len(argentina) + len(paises_bajos) - 1):
+        print('El juego finaliza de forma adelantada, dado que ya no hay posibilidad de empate o dar vuelta el resultado por parte del equipo perdedor.')
         break
